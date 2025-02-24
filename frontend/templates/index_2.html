@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Blog Posts</h1>
+
+        <!-- API Base URL -->
+        <div class="input-field">
+            <input type="text" id="api-base-url" placeholder="Enter API Base URL" value="http://127.0.0.1:5002">
+            <button onclick="loadPosts()">Load Posts</button>
+        </div>
+
+        <!-- Add Post -->
+        <div class="input-field">
+            <input type="text" id="post-title" placeholder="Enter Post Title">
+            <input type="text" id="post-content" placeholder="Enter Post Content">
+            <button onclick="addPost()">Add Post</button>
+        </div>
+
+        <!-- Update Post -->
+        <div class="input-field">
+            <input type="number" id="update-id" placeholder="Post ID to Update">
+            <input type="text" id="update-title" placeholder="New Title">
+            <input type="text" id="update-content" placeholder="New Content">
+            <button onclick="updatePost()">Update Post</button>
+        </div>
+
+        <!-- Search Posts -->
+        <div class="input-field">
+            <input type="text" id="search-title" placeholder="Search by Title">
+            <input type="text" id="search-content" placeholder="Search by Content">
+            <button onclick="searchPosts()">Search Posts</button>
+        </div>
+
+        <!-- Sort Posts -->
+        <div class="input-field">
+            <select id="sort-field">
+                <option value="">-- Select Field --</option>
+                <option value="title">Title</option>
+                <option value="content">Content</option>
+            </select>
+            <select id="sort-direction">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <button onclick="loadPosts()">Sort Posts</button>
+        </div>
+
+        <!-- Post Container -->
+        <div id="post-container">
+            <!-- Blog posts will be inserted here by JavaScript -->
+        </div>
+
+    </div>
+
+    <script src="static/main2.js"></script>
+</body>
+</html>
+
